@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
+const config = require("./config");
 
 let posts = [
     {
@@ -23,4 +24,6 @@ app.post("/create", (req, res) => {
     res.redirect("/");
 });
 
-app.listen(3000, () => console.log("Example app listining an port 3000"));
+app.listen(config.PORT, () =>
+    console.log(`Example app listining an port ${config.PORT}`)
+);
