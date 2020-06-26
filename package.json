@@ -1,24 +1,26 @@
 {
-  "name": "test-express",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Shohabbos Olimjonov",
-  "license": "ISC",
-  "devDependencies": {
-    "eslint": "^7.3.1",
-    "eslint-plugin-node": "^11.1.0",
-    "nodemon": "^2.0.4"
-  },
-  "engines": {
-    "node": ">=8.10.0"
-  },
-  "dependencies": {
-    "express": "^4.17.1"
-  }
+    "name": "test-express",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "dev": "nodemon --watch views -e js,twig index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Shohabbos Olimjonov",
+    "license": "ISC",
+    "devDependencies": {
+        "eslint": "^7.3.1",
+        "eslint-plugin-node": "^11.1.0",
+        "nodemon": "^2.0.4"
+    },
+    "engines": {
+        "node": ">=8.10.0"
+    },
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "express": "^4.17.1",
+        "twig": "^1.15.1"
+    }
 }

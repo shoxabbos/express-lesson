@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My first express app</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	</head>
+
+	<body>
+		<div class="container">
+			<h1>
+				My blog
+				<a href="/create" class="btn btn-link float-right">
+					Add new
+				</a>
+			</h1>
+			<hr>
+			<ul>
+				{% for post in posts %}
+					<li>
+						<strong>
+							{{post.title}}
+						</strong>
+
+						<i>{{post.content}}</i>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</body>
+</html></body></html>
