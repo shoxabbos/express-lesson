@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "start": "cross-env PORT=3001 node index.js",
-        "dev": "nodemon --watch views -e js,twig index.js",
+        "dev": "nodemon index.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "Shohabbos Olimjonov",
