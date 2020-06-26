@@ -1,29 +1,16 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const app = express();
+const app = require("./app");
 const config = require("./config");
+const database = require("./database");
 
-let posts = [
-    {
-        title: "My first blog news",
-        content: "This is just content",
-    },
-];
+database()
+    .then((info) => {
+        console.log(`Connected to ${info.host}:${info.port}/${info.name}`);
 
-app.set("view engine", "twig");
-app.use(bodyParser.urlencoded({ extended: true }));
-
-app.get("/", (req, res) => res.render("index", { posts: posts }));
-app.get("/create", (req, res) => res.render("create"));
-app.post("/create", (req, res) => {
-    posts.push({
-        title: req.body.title,
-        content: req.body.content,
+        app.listen(config.PORT, () =>
+            console.log(`Example app listining an port ${config.PORT}`)
+        );
+    })
+    .catch((process) => {
+        console.error("Cannot connect to db");
+        process.exit(1);
     });
-
-    res.redirect("/");
-});
-
-app.listen(config.PORT, () =>
-    console.log(`Example app listining an port ${config.PORT}`)
-);
